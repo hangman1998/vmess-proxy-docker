@@ -21,7 +21,7 @@
   ],
   "outbounds": [
     {
-      "protocol": "vmess",
+      "protocol": "vless",
       "settings": {
         "vnext": [
           {
@@ -30,16 +30,26 @@
             "users": [
               {
                 "id": "$D_UUID",
-                "alterId": 0
+                "alterId": 0,
+                "email": "t@t.tt",
+                "security": "auto",
+                "encryption": "none",
+                "flow": ""
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "path": "/$D_WS_PATH"
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "$SNI",
+          "fingerprint": "chrome",
+          "show": false,
+          "publicKey": "$PKEY",
+          "shortId": "$SHORT_ID",
+          "spiderX": ""
         }
       }
     }
