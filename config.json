@@ -21,8 +21,27 @@
   ],
   "outbounds": [
     {
-      "protocol": "freedom",
-      "settings": {}
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "$D_HOST",
+            "port": $D_PORT,
+            "users": [
+              {
+                "id": "$D_UUID",
+                "alterId": 0
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/$D_WS_PATH"
+        }
+      }
     }
   ]
 }
